@@ -7,12 +7,8 @@ import re
 
 '''
 Author: Riki Borders
-Due Date: 4/30/2021 10:00 PM
-CS240 Final Project: Assembler Pass 1
+Development start: 4/15/2021
 '''
-
-#NOTE: A word in SIC/XE = 3 bytes.
-# That would mean a dword is 6 bytes.
 
 #Global Dictionary of all format 1/2/3 instructions, and their sizes
 instructions = {"ADD": 3,   "ADDF": 3,  "ADDR": 2,"AND": 3, "CLEAR": 2,"COMP": 3,
