@@ -95,8 +95,6 @@ def pass1(inFd):
     # Process each line of the file & update location as we go
     while line != "":
         location, label_dict = parseInstruction(line, location, label_dict, line_locations)
-        #line_locations.append(location)
-        #print(location, line)
         line = inFd.readline()
 
     return label_dict, line_locations
@@ -322,11 +320,6 @@ def pass2(inFd, o_filename, label_dict, line_locations):
             s = dec2hex(length)[4:]
             text_record = text_record + s + accumulated # finalize whatever we have left
             text_records.append(text_record)
-
-    # print(header_record)
-    # for r in text_records:
-    #     print(r)
-    # print(end_record)
 
     write_bytes(o_filename, header_record, text_records, end_record)
 
@@ -822,8 +815,6 @@ def pass2_parseline(line, label):
             param = re.match(r"([0-9A-Za-z+@#\']*),([ ]*[0-9A-Za-z+@#\']*)(?:\s|$)", line, re.IGNORECASE).group(0).rstrip()
         else:
             param = re.match(r"([0-9A-Za-z+@#\',]*)(?:\s|$)", line, re.IGNORECASE).group(0).rstrip()
-        #param = re.match(r"([0-9A-Za-z+@#\',]*)(?:\s|$)", line, re.IGNORECASE).group(0).rstrip()
-
 
     return label, mnemonic, param
 
