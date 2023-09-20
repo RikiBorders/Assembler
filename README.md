@@ -1,3 +1,5 @@
+Yes, this was a college project.
+
 # Assembler
 A Python-based assembler capable of parsing and assembling SIC/XE assembly files.
 
